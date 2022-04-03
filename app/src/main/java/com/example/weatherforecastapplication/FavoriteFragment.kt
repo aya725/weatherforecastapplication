@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
+import com.example.weatherforecastapplication.db.ConcreteLocalSource
 import com.example.weatherforecastapplication.model.Repository
 import com.example.weatherforecastapplication.network.WeatherClient
 import com.example.weatherforecastapplication.viewmodel.WeatherViewModel
@@ -37,6 +38,7 @@ class FavoriteFragment : Fragment() {
         weatherFactory = WeatherViewModelFactory(
             Repository.getInstance(
                 requireContext(), WeatherClient.getInstance()!!
+                , ConcreteLocalSource(requireContext())
             )!!
         )
         weatherViewModel = ViewModelProvider(requireActivity(),weatherFactory).get(WeatherViewModel::class.java)
