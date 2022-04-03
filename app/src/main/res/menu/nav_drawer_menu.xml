@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:title="Home"
+            android:id="@+id/home"
+            android:icon="@drawable/home"
+            />
+        <item
+            android:title="Favorite"
+            android:id="@+id/fav"
+            android:icon="@drawable/fav"
+            />
+
+        <item
+            android:title="Alert"
+            android:id="@+id/alert"
+            android:icon="@drawable/alert"
+            />
+        <item
+            android:title="Settings"
+            android:id="@+id/settings"
+            android:icon="@drawable/settings"/>
+
+
+    </group>
+
+  <item android:title="">
+      <menu>
+          <group android:checkableBehavior="single">
+              <item
+                  android:title="Day"
+                  android:id="@+id/day"
+                  android:icon="@drawable/day"
+                  />
+
+              <item
+                  android:title="week"
+                  android:id="@+id/week"
+                  android:icon="@drawable/weak"
+                  />
+              <item
+                  android:title="Month"
+                  android:id="@+id/Month"
+                  android:icon="@drawable/month"/>
+          </group>
+
+      </menu>
+  </item>
+
+</menu>

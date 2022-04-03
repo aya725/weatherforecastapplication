@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/day"
+    android:title="DAY"
+        android:icon="@drawable/today"
+    />
+    <item android:id="@+id/sevenDay"
+    android:title="7Days"
+        android:icon="@drawable/seven"
+    />
+    <item android:id="@+id/settings"
+    android:title="settings"
+        android:icon="@drawable/bottomsettings"
+    />
+</menu>
