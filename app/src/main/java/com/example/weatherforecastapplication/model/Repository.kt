@@ -6,6 +6,7 @@ import com.example.weatherforecastapplication.db.LocalSource
 import com.example.weatherforecastapplication.network.Current
 import com.example.weatherforecastapplication.network.RemoteSource
 import com.example.weatherforecastapplication.network.WeatherResponse
+import com.example.weatherforecastapplication.view.fav.adapters.FavPojo
 
 class Repository (
     val context: Context,
@@ -50,6 +51,14 @@ class Repository (
 
     override suspend fun insertWeather(weatherResponse: WeatherResponse) {
        localSource.insert(weatherResponse)
+    }
+
+    override suspend fun insertFav(favPojo: FavPojo) {
+        localSource.insertFav(favPojo)
+    }
+
+    override fun getFvLocations(): LiveData<List<FavPojo>> {
+        return localSource.getFvLocations()
     }
 
 

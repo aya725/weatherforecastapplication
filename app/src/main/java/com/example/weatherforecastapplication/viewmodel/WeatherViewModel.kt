@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.weatherforecastapplication.model.RepositoryInterface
 import com.example.weatherforecastapplication.network.Current
 import com.example.weatherforecastapplication.network.WeatherResponse
+import com.example.weatherforecastapplication.view.fav.adapters.FavPojo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -34,6 +35,15 @@ class WeatherViewModel(private val repo:RepositoryInterface):ViewModel() {
     }
     fun getWeatherLocally ():LiveData<WeatherResponse>{
          return repo.getStoredWeather()
+    }
+
+    fun insertFavToDatabase(favPojo: FavPojo){
+        viewModelScope.launch (Dispatchers.IO){
+            repo.insertFav(favPojo)
+        }
+    }
+    fun getAllFavLocation():LiveData<List<FavPojo>>{
+        return repo.getFvLocations()
     }
 
 

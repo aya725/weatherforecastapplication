@@ -3,7 +3,6 @@ package com.example.weatherforecastapplication
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,12 +17,10 @@ import com.example.weatherforecastapplication.db.ConcreteLocalSource
 import com.example.weatherforecastapplication.model.Repository
 import com.example.weatherforecastapplication.network.Hourly
 import com.example.weatherforecastapplication.network.WeatherClient
-import com.example.weatherforecastapplication.view.HourlyAdapter
+import com.example.weatherforecastapplication.view.fav.adapters.HourlyAdapter
 import com.example.weatherforecastapplication.viewmodel.WeatherViewModel
 import com.example.weatherforecastapplication.viewmodel.WeatherViewModelFactory
-import java.sql.Time
 import java.util.*
-import java.util.concurrent.TimeUnit
 
 
 class HomeFragment : Fragment() {

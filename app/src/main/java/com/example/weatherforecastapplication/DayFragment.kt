@@ -15,8 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherforecastapplication.db.ConcreteLocalSource
 import com.example.weatherforecastapplication.model.Repository
 import com.example.weatherforecastapplication.network.WeatherClient
-import com.example.weatherforecastapplication.view.DailyAdapter
-import com.example.weatherforecastapplication.view.HourlyAdapter
+import com.example.weatherforecastapplication.view.fav.adapters.DailyAdapter
 import com.example.weatherforecastapplication.viewmodel.WeatherViewModel
 import com.example.weatherforecastapplication.viewmodel.WeatherViewModelFactory
 import java.util.ArrayList

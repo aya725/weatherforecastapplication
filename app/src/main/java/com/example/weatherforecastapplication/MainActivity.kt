@@ -16,12 +16,10 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import androidx.navigation.Navigation
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.weatherforecastapplication.databinding.ActivityMainBinding
+import com.example.weatherforecastapplication.view.fav.FavoriteFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import java.lang.reflect.Array.newInstance
 
 class MainActivity : AppCompatActivity() {
 
