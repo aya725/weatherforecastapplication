@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/new_fet_background"
+    android:padding="25dp"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp"
-    tools:context=".AlertsFragment">
+    tools:context=".workManger.AlertsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+  <RelativeLayout
+      android:id="@+id/mainContainer"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:visibility="visible">
 
-    <RadioGroup
-        android:id="@+id/rgGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <RadioButton
-            android:id="@+id/male"
-            android:text="male"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <RadioButton
-            android:id="@+id/female"
-            android:text="female"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/addressContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="result"/>
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         android:text="ok"/>
-    <ImageView
-        android:id="@+id/imaa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
-
-></ImageView>
+        android:gravity="center"
+        android:orientation="vertical">
 
 
-</LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_textTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dateAndTimePicker"
+            android:layout_marginTop="46dp"
+            android:text="the time"
+            android:textSize="22sp" />
+
+  <Button
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/dateAndTimePickerTow"
+      android:text="Pick Time"
+      />
+
+
+
+
+    </LinearLayout>
+  </RelativeLayout>
+
+</RelativeLayout>

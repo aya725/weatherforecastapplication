@@ -3,11 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/new_fet_background"
     android:padding="25dp"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".views.HomeFragment">
+
+    tools:context=".view.fav.FavHomeFragment">
 
 
     <RelativeLayout
@@ -24,23 +25,21 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/address"
+                android:id="@+id/addressFav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/location_text"
                 android:textColor="@color/white"
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/dayHome"
+                android:id="@+id/fells_like_Fav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/updated_at"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
@@ -52,21 +51,22 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/statues"
+                android:id="@+id/statuesFav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textColor="@color/white"
                 android:textSize="18sp"
 
-                />
+                tools:text="l;l;l" />
 
             <TextView
-                android:id="@+id/tempc"
+                android:id="@+id/tempcFav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="sans-serif-thin"
+                android:text="ayh"
                 android:textColor="@color/white"
                 android:textSize="92sp"
 
@@ -79,22 +79,22 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/image"
+                    android:id="@+id/imageFav"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    />
-
+                    android:src="@mipmap/ic_launcher" />
+                />
 
                 <Space
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"></Space>
 
                 <TextView
-                    android:id="@+id/desc"
+                    android:id="@+id/descFav"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="25dp" />
+                    android:text="desc"
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -142,7 +142,7 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/sunrise"
+                        android:id="@+id/sunriseFav"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/sunrise_time"
@@ -184,7 +184,7 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/wind"
+                        android:id="@+id/windFav"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="3:25am"
@@ -226,7 +226,7 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/pressure"
+                        android:id="@+id/pressureFav"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="3:25am"
@@ -280,7 +280,7 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/humidity"
+                        android:id="@+id/humidityFav"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/sunrise_time"
@@ -322,7 +322,7 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/cloud"
+                        android:id="@+id/cloudFav"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="3:25am"
@@ -364,7 +364,7 @@
                         android:textSize="12sp" />
 
                     <TextView
-                        android:id="@+id/sunset"
+                        android:id="@+id/sunsetFav"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="3:25am"
@@ -381,5 +381,6 @@
 
         </LinearLayout>
     </RelativeLayout>
+
 
 </RelativeLayout>

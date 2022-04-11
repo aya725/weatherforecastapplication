@@ -2,7 +2,7 @@ package com.example.weatherforecastapplication.db
 
 import androidx.lifecycle.LiveData
 import com.example.weatherforecastapplication.network.WeatherResponse
-import com.example.weatherforecastapplication.view.fav.adapters.FavPojo
+import com.example.weatherforecastapplication.view.fav.FavPojo
 
 interface LocalSource {
 

@@ -12,6 +12,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.weatherforecastapplication.R
 import com.example.weatherforecastapplication.network.Daily
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DailyAdapter (
     private val context : Context,
@@ -32,8 +34,7 @@ class DailyAdapter (
         get() = itemView.findViewById(R.id.tempDay)
         val day : TextView
         get() = itemView.findViewById(R.id.day)
-        val sunDay :TextView
-        get() = itemView.findViewById(R.id.dailySun)
+
 
     }
 
@@ -47,15 +48,41 @@ class DailyAdapter (
             .into(holder.dayImage)
 
         holder.day.text = dailyList[position].dt.toString()
-        holder.sunDay.text = dailyList[position].sunrise.toString()
+       // holder.sunDay.text = dailyList[position].sunrise.toString()
+
+
+
+        //Unix seconds
+        val unix_seconds: Long = dailyList[position].dt.toLong()
+        //convert seconds to milliseconds
+        val date = Date(unix_seconds * 1000L)
+        // format of the date
+        val jdf = SimpleDateFormat("EEE")
+       // val jdf = SimpleDateFormat("HH:mm")
+        jdf.timeZone = TimeZone.getTimeZone("GMT+2")
+        val java_date = jdf.format(date).trimIndent()
+        holder.day.text = java_date
 
 
 
         //sunrise
-        var seconds =  (dailyList[position].sunrise/ 1000) % 60 ;
+
+
+        //Unix seconds
+        val unix_secondsSun: Long = dailyList[position].sunrise.toLong()
+        //convert seconds to milliseconds
+        val dateSun = Date(unix_seconds * 1000L)
+        // format of the date
+        //val jdf = SimpleDateFormat("EEE yyyy-MM-dd HH:mm")
+        val jdfSun = SimpleDateFormat("HH:mm")
+        jdfSun.timeZone = TimeZone.getTimeZone("GMT+2")
+        val java_date_Sun = jdfSun.format(date).trimIndent()
+       // holder.sunDay.text = java_date_Sun
+
+        /*var seconds =  (dailyList[position].sunrise/ 1000) % 60 ;
         var minutes =  ((dailyList[position].sunrise / (1000*60)) % 60);
         var hours   =  ((dailyList[position].sunrise / (1000*60*60)) % 24);
-        holder.sunDay.text = "${hours}:${minutes}:${seconds}"
+        holder.sunDay.text = "${hours}:${minutes}:${seconds}"*/
 
 
 

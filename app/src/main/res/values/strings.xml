@@ -37,4 +37,5 @@
     <string name="sunset">Sunset</string>
     <string name="humidityTow">Humidity</string>
     <string name="kelvin">Kelvin</string>
+    <string name="title_activity_fav_map">FavMap</string>
 </resources>

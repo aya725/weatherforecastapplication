@@ -30,20 +30,12 @@
       <menu>
           <group android:checkableBehavior="single">
               <item
-                  android:title="Day"
+                  android:title="7Days"
                   android:id="@+id/day"
                   android:icon="@drawable/day"
                   />
 
-              <item
-                  android:title="week"
-                  android:id="@+id/week"
-                  android:icon="@drawable/weak"
-                  />
-              <item
-                  android:title="Month"
-                  android:id="@+id/Month"
-                  android:icon="@drawable/month"/>
+
           </group>
 
       </menu>

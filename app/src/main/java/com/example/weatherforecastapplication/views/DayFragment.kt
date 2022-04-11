@@ -1,4 +1,4 @@
-package com.example.weatherforecastapplication
+package com.example.weatherforecastapplication.views
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.weatherforecastapplication.R
 import com.example.weatherforecastapplication.db.ConcreteLocalSource
 import com.example.weatherforecastapplication.model.Repository
 import com.example.weatherforecastapplication.network.WeatherClient

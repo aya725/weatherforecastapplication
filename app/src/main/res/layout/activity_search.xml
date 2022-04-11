@@ -29,9 +29,16 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="Search"
+                android:text="Fav"
                 android:textColor="@color/white"
                 android:onClick="searchLocation"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Search"
+                android:textColor="@color/white"
+                android:onClick="mapLocation"
                 />
 
 

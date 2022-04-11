@@ -1,11 +1,11 @@
-package com.example.weatherforecastapplication.view.fav.adapters
+package com.example.weatherforecastapplication.view.fav
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity (tableName = "favourite")
-class FavPojo (
+data class FavPojo (
     @ColumnInfo(name = "latitude")
     var latitudeFv  : Double,
 

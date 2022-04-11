@@ -3,7 +3,7 @@ package com.example.weatherforecastapplication.db
 import android.content.Context
 import androidx.lifecycle.LiveData
 import com.example.weatherforecastapplication.network.WeatherResponse
-import com.example.weatherforecastapplication.view.fav.adapters.FavPojo
+import com.example.weatherforecastapplication.view.fav.FavPojo
 
 class ConcreteLocalSource(
     val context: Context

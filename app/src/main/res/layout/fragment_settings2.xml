@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SettingsFragment"
+    tools:context=".views.SettingsFragment"
     android:background="@drawable/new_fet_background"
     >
 
@@ -388,6 +388,7 @@
                    app:layout_constraintTop_toTopOf="parent"
                    />
                  <ImageButton
+                     android:id="@+id/ButtonFav"
                      android:layout_width="30dp"
                      android:layout_height="30dp"
                      android:contentDescription="@string/app_name"

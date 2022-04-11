@@ -12,6 +12,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.weatherforecastapplication.R
 import com.example.weatherforecastapplication.network.Hourly
+import java.text.SimpleDateFormat
+import java.util.*
 
 class HourlyAdapter(
     private val context : Context,
@@ -27,8 +29,8 @@ class HourlyAdapter(
     }
 
     inner class ViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
-        val hour :TextView
-        get() = itemView.findViewById(R.id.hour)
+        val hourTemp :TextView
+        get() = itemView.findViewById(R.id.tempTemp)
         val tempHour :TextView
         get () = itemView.findViewById(R.id.tempHour)
         val image :ImageView
@@ -53,24 +55,26 @@ class HourlyAdapter(
         if (tempUnit=="Celsius"){
 
             var  tempString= "${hourlyList[position].temp}°C"
-            holder.tempHour.text = tempString
+            holder.hourTemp.text = tempString
         }
         else{
             var tempo = hourlyList[position].temp*9/5+32
             var  tempString= "${tempo}°F"
-            holder.tempHour.text = tempString
+            holder.hourTemp.text = tempString
         }
 
+        //Unix seconds
+        val unix_seconds: Long = hourlyList[position].dt.toLong()
+        //convert seconds to milliseconds
+        val date = Date(unix_seconds * 1000L)
+        // format of the date
+        //val jdf = SimpleDateFormat("EEE yyyy-MM-dd HH:mm")
+        val jdf = SimpleDateFormat("HH:mm")
+        jdf.timeZone = TimeZone.getTimeZone("GMT+2")
+        val java_date = jdf.format(date).trimIndent()
+        holder.tempHour.text = java_date
 
 
-
-
-
-
-        var seconds =  (hourlyList[position].dt/ 1000) % 60 ;
-        var minutes =  ((hourlyList[position].dt / (1000*60)) % 60);
-        var hours   =  ((hourlyList[position].dt / (1000*60*60)) % 24);
-        holder.hour.text = "${hours}:${minutes}:${seconds}"
 
     }
     fun setList(hourlyList: List<Hourly>){

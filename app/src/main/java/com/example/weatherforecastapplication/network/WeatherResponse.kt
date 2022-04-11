@@ -3,12 +3,11 @@ package com.example.weatherforecastapplication.network
 import androidx.room.*
 import com.example.weatherforecastapplication.model.Converter
 
+
 const val LAST_WEATHER_ID = 0
 
-@Entity(tableName = "weather")
+    @Entity(tableName = "weather")
 data class WeatherResponse(
-
-
     @TypeConverters(Converter::class)
     @ColumnInfo (name = "current")
     val current: Current,
@@ -31,7 +30,14 @@ data class WeatherResponse(
     val timezone: String,
 
     @ColumnInfo (name = "timezone_offset")
-    val timezone_offset: Int
+    val timezone_offset: Int,
+
+    @ColumnInfo (name = "alerts")
+
+    val alerts :List<Alerts>? = null,
+
+   // @ColumnInfo (name = "endDate")
+    //val endDate :Long
 
 ){
     @PrimaryKey(autoGenerate = false)

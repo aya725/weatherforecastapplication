@@ -3,10 +3,9 @@ package com.example.weatherforecastapplication.model
 import android.content.Context
 import androidx.lifecycle.LiveData
 import com.example.weatherforecastapplication.db.LocalSource
-import com.example.weatherforecastapplication.network.Current
 import com.example.weatherforecastapplication.network.RemoteSource
 import com.example.weatherforecastapplication.network.WeatherResponse
-import com.example.weatherforecastapplication.view.fav.adapters.FavPojo
+import com.example.weatherforecastapplication.view.fav.FavPojo
 
 class Repository (
     val context: Context,

@@ -1,10 +1,16 @@
-package com.example.weatherforecastapplication
+package com.example.weatherforecastapplication.views
 
 import android.content.pm.PackageManager
+import android.location.Address
+import android.location.Geocoder
 import android.location.Location
+import android.location.LocationListener
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import com.example.weatherforecastapplication.R
+import com.example.weatherforecastapplication.databinding.ActivityMaps2Binding
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -12,12 +18,12 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.example.weatherforecastapplication.databinding.ActivityMaps2Binding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import java.util.jar.Manifest
+import java.io.IOException
+import java.util.*
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,LocationListener,GoogleMap.OnCameraIdleListener,GoogleMap.OnCameraMoveStartedListener{
     var currentLocation:Location? = null
     var fusedLocationProviderClient:FusedLocationProviderClient?=null
     val REQUEST_CODE=101
@@ -83,4 +89,26 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
+
+    override fun onLocationChanged(location: Location) {
+          val geocoder = Geocoder(this, Locale.getDefault())
+        var address: List<Address>? = null
+        try {
+            address = geocoder.getFromLocation(location!!.latitude,location.longitude,1)
+        }
+        catch(e:IOException){
+            e.printStackTrace()
+        }
+         // setAddress(address!![0])
+    }
+
+    override fun onCameraIdle() {
+
+    }
+
+    override fun onCameraMoveStarted(p0: Int) {
+        TODO("Not yet implemented")
+    }
+
+
 }

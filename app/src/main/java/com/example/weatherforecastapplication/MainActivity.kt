@@ -18,6 +18,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import com.example.weatherforecastapplication.databinding.ActivityMainBinding
 import com.example.weatherforecastapplication.view.fav.FavoriteFragment
+import com.example.weatherforecastapplication.views.*
+import com.example.weatherforecastapplication.workManger.AlertsFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
@@ -47,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frameLayout,HomeFragment())
+        fragmentTransaction.replace(R.id.frameLayout, HomeFragment())
         fragmentTransaction.commit()
 
 
@@ -70,9 +72,6 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.day -> replaceFragment(DayFragment(),it.title.toString())
 
-                R.id.week -> replaceFragment(SevenDaysFragment(),it.title.toString())
-
-                R.id.Month -> replaceFragment(MonthFragment(),it.title.toString())
 
             }
             true

@@ -1,10 +1,7 @@
 package com.example.weatherforecastapplication.model
 
 import androidx.room.TypeConverter
-import com.example.weatherforecastapplication.network.Current
-import com.example.weatherforecastapplication.network.Daily
-import com.example.weatherforecastapplication.network.Hourly
-import com.example.weatherforecastapplication.network.Weather
+import com.example.weatherforecastapplication.network.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
@@ -54,6 +51,18 @@ class Converter {
         val weatherListType = object  : TypeToken<List<Weather>>(){
         }.type
         return gson.fromJson(data,weatherListType)
+    }
+
+   //alerts
+    @TypeConverter
+    fun alertToString(alerts: List<Alerts>?):String{
+        return gson.toJson(alerts)
+    }
+    @TypeConverter
+    fun stringToAlert(data:String):List<Alerts>?{
+        val AlertListType = object  : TypeToken<List<Alerts>?>(){
+        }.type
+        return gson.fromJson(data,AlertListType)
     }
 
 

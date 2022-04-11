@@ -5,7 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 
-import com.example.weatherforecastapplication.view.fav.adapters.FavPojo
+import com.example.weatherforecastapplication.view.fav.FavPojo
 
 @Dao
 interface FavDao {
@@ -13,6 +13,6 @@ interface FavDao {
     @Insert
     fun insertFav (favPojo: FavPojo)
 
-    @Query(value = "select * from favourite")
+    @Query( "select * from favourite")
     fun getFavouritesLocally(): LiveData<List<FavPojo>>
 }
